@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
+@Entity(name = "_attribute")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Attribute {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "attribute_id")
     private Long id;
     private String name;
     @OneToMany(mappedBy ="attribute")

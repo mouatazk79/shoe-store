@@ -17,7 +17,7 @@ public class OrderProduct {
     private OrderProductId id;
     @ManyToOne
     @MapsId("productId")
-    private ProductVariation productVariation;
+    private Product product;
     @ManyToOne
     @MapsId("orderId")
     private Order order;

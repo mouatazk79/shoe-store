@@ -11,7 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Date;
 
 
-@Entity
+@Entity(name = "_order")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,6 +19,7 @@ import java.util.Date;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "order_id")
     private Long id;
     private String firstName;
     private String lastName;
