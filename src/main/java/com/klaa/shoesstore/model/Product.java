@@ -20,9 +20,13 @@ public class Product {
     private String description;
     private String mainPictureURL;
     private String price;
-    private boolean isSimple;
     private boolean isActive;
-    @OneToMany()
-    private List<ProductVariation> productVariations;
+    @ManyToMany
+    @JoinTable(
+            name="product_variation"
+            ,joinColumns = @JoinColumn(name = "productId")
+            ,inverseJoinColumns = @JoinColumn(name = "optionId")
+    )
+   private List<Option> options;
 
 }

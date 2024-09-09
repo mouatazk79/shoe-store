@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -16,5 +18,7 @@ public class Option {
     @ManyToOne
     private Attribute attribute;
     private String value;
+    @ManyToMany(mappedBy = "options")
+    private List<Product> products;
 
 }
